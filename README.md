@@ -44,7 +44,7 @@ Returns a list of user profile information. Here's an example response:
 ]
 ```
 
-#### Get `/users/:id/relationships/logins` -> `UserLogins[]`
+#### Get `/users/:id/relationships/logins` -> `UserLogins`
 
 Returns a list of user logins. Here's an example response:
 
