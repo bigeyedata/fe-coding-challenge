@@ -93,9 +93,9 @@ app.get("/users", (req, res) => res.send(users));
 app.get("/users/:id/relationships/logins", (req, res) => {
     const { id } = req.params;
 
-    if (id < 0 || id >= user_logins.length) {
+    if (id < 0 || id > user_logins.length) {
         return res.status(404).send({
-            message: `Could not find a field with ID '${id}'`,
+            message: `Could not find a user with ID '${id}'`,
         });
     }
 
