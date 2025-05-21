@@ -3,24 +3,23 @@
 Hi! 👋 Thanks for considering Bigeye! We're excited you've decided to interview with us.
 
 For this portion of your interview, you will be **live-coding a simple React app in TypeScript** which we have
-already scaffolded for you. Your React app will display some data from the API server included in this repo.
+already scaffolded for you. Your React app will display some data from an API that we have provided.
 
 ## The Fake Users API
 
-The `server/` directory contains a REST API server. This REST API server is pretty terrible. Among other problems, it:
+The `src/api` directory contains two API endpoints. The backend is pretty terrible. Among other problems, it:
 
-* **Randomly fails.** When a random failure occurs, the server responds with a 500 status code and an error message.
+- **Randomly fails.** When a random failure occurs, the server responds with a 500 status code and an error message.
   You can expect about 25% of your requests to fail.
-* **Experiences random slow-downs.** Some responses are quite fast (~10ms), but some responses can take up to 3s.
+- **Experiences random slow-downs.** Some responses are quite fast (~10ms), but some responses can take up to 3s.
 
-### Running the API
+### Running the Project
 
-Install all project dependencies by running `yarn install` at the root of the project. Then, inside the
-`server/` directory, run `yarn start` to run the API server.
+The scaffold we have built for you is based on a simple Next.js app. Install all project dependencies by running `npm install` at the root of the project. Then run `npm run dev` to start the dev server. This will make the API available at `http://localhost:3001/api/` and the React app available at `http://localhost:3001/`.
 
 ### API Endpoints
 
-The API server always responds with JSON and only has two endpoints. The `server/types.ts` file contains type
+The API server always responds with JSON and only has two endpoints. The `src/types.ts` file contains type
 definitions for the endpoint responses.
 
 #### GET `/users` -> `User[]`
@@ -44,7 +43,7 @@ Returns a list of user profile information. Here's an example response:
 ]
 ```
 
-#### Get `/users/:id/relationships/logins` -> `UserLogins`
+#### GET `/users/:id/relationships/logins` -> `UserLogins`
 
 Returns a list of user logins. Here's an example response:
 
@@ -70,29 +69,26 @@ Returns a list of user logins. Here's an example response:
 
 ## Your Task
 
-Your task is to use the API server to display a list of user profile information alongside the last (most recent)
+Your task is to use the API endpoints to display a list of user profile information alongside the last (most recent)
 time the user logged in.
 
 Specifically, you should display the following information:
 
-* User ID
-* Full name
-* Email address
-* Last (most recent) login time
-* Last (most recent) login IP address
+- User ID
+- Full name
+- Email address
+- Last (most recent) login time
+- Last (most recent) login IP address
 
 You should also display a total count for the number of users in your list.
 
-To save you some time, we have already created an empty Create React App project for you in the `client/`
-directory.
-
-**Do not focus on what the app looks like**. Focus on the *states* of the app and displaying the correct *information*
+**Do not focus on what the app looks like**. Focus on the _states_ of the app and displaying the correct _information_
 despite the flaky API.
 
 ## Bonus Tasks
 
-* Use the [geoip-country](https://www.npmjs.com/package/geoip-country) package to display the country associated
+- Use the [`@iplookup/geocode`](https://www.npmjs.com/package/@iplookup/geocode) package to display the country associated
   with the user's last login IP address.
-* Use your favorite date library to display the login time using a "humanized" format (e.g. "a minute ago",
+- Use your favorite date library to display the login time using a "humanized" format (e.g. "a minute ago",
   "1 month ago").
-* Highlight any users who haven't logged in for at least one month.
+- Highlight any users who haven't logged in for at least one month.
