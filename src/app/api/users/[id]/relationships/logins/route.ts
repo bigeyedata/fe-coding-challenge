@@ -4,16 +4,18 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } },
+  _: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const userId = parseInt(params.id, 10);
+    // Apparently you have to await params for some reason like this.
+    const { id } = await params;
+    const userId = parseInt(id, 10);
 
     if (isNaN(userId)) {
       return NextResponse.json(
         { error: "Invalid user ID format" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -29,12 +31,12 @@ export async function GET(
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ data: userLogin.logins });
+    return NextResponse.json({ data: userLogin });
   } catch (error) {
     console.error("Error fetching user logins:", error);
     return NextResponse.json(
       { error: "Failed to fetch user logins" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

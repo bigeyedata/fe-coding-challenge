@@ -1,9 +1,9 @@
 import { User } from "@/types";
 import fs from "fs";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import path from "path";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Read the users.json file
     const filePath = path.join(process.cwd(), "src/data/users.json");
@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     console.error("Error fetching users:", error);
     return NextResponse.json(
       { error: "Failed to fetch users" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

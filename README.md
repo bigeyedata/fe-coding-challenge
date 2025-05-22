@@ -27,20 +27,22 @@ definitions for the endpoint responses.
 Returns a list of user profile information. Here's an example response:
 
 ```json
-[
-  {
-    "id": 1,
-    "first_name": "Orazio",
-    "last_name": "Slipper",
-    "email": "oslipper0@army.mil"
-  },
-  {
-    "id": 2,
-    "first_name": "Madeline",
-    "last_name": "Cornbell",
-    "email": "mcornbell1@mashable.com"
-  }
-]
+{
+  "data": [
+    {
+      "id": 1,
+      "first_name": "Orazio",
+      "last_name": "Slipper",
+      "email": "oslipper0@army.mil"
+    },
+    {
+      "id": 2,
+      "first_name": "Madeline",
+      "last_name": "Cornbell",
+      "email": "mcornbell1@mashable.com"
+    }
+  ]
+}
 ```
 
 #### GET `/users/:id/relationships/logins` -> `UserLogins`
@@ -49,21 +51,23 @@ Returns a list of user logins. Here's an example response:
 
 ```json
 {
-  "user_id": 1,
-  "logins": [
-    {
-      "login_time": "2020-11-13T11:21:48Z",
-      "ip_v4": "115.31.131.47"
-    },
-    {
-      "login_time": "2020-12-25T07:23:24Z",
-      "ip_v4": "61.129.200.209"
-    },
-    {
-      "login_time": "2020-06-14T19:40:28Z",
-      "ip_v4": "118.36.51.49"
-    }
-  ]
+  "data": {
+    "user_id": 1,
+    "logins": [
+      {
+        "login_time": "2020-11-13T11:21:48Z",
+        "ip_v4": "115.31.131.47"
+      },
+      {
+        "login_time": "2020-12-25T07:23:24Z",
+        "ip_v4": "61.129.200.209"
+      },
+      {
+        "login_time": "2020-06-14T19:40:28Z",
+        "ip_v4": "118.36.51.49"
+      }
+    ]
+  }
 }
 ```
 
