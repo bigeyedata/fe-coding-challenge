@@ -15,7 +15,7 @@ The `src/api` directory contains two API endpoints. The backend is pretty terrib
 
 ### Running the Project
 
-The scaffold we have built for you is based on a simple Next.js app. Install all project dependencies by running `npm install` at the root of the project. Then run `npm run dev` to start the dev server. This will make the API available at `http://localhost:3001/api/` and the React app available at `http://localhost:3001/`.
+The scaffold we have built for you is based on a simple Next.js app. Install all project dependencies by running `npm install` at the root of the project. Then run `npm run dev` to start the dev server. This will make the API available at `http://localhost:3000/api/` and the React app available at `http://localhost:3000/`.
 
 ### API Endpoints
 
